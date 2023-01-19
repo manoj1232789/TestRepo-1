@@ -10,12 +10,17 @@ namespace DeletePlugin
 {
     public class DelPlugin : IPlugin
     {
+    int a,b;
         public void Execute(IServiceProvider serviceProvider)
         {
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
             ITracingService tracingservice = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+            
+            public void Manoj()
+            {
+           }
 
             EntityReference EntRec = null;
             if (context.InputParameters.Contains("Target"))
